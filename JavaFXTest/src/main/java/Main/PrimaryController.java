@@ -1,4 +1,4 @@
-package com.mycompany.mavenproject4;
+package Main;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
