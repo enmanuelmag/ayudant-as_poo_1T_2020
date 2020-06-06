@@ -9,10 +9,18 @@ public class Cliente {
   private String motivo;
   private int numero;
 
+  /**
+   * Constructor de la clase Cliente
+   * 
+   * @param cedula identificacion del cliente
+   * @param nombre del cliente
+   */
   public Cliente(String cedula, String nombre) {
     this.cedula = cedula;
     this.nombre = nombre;
   }
+
+  // GETTERS Y SETTERS
 
   public String getCedula() {
     return this.cedula;
@@ -71,12 +79,17 @@ public class Cliente {
       return false;
     }
     Cliente cliente = (Cliente) o;
-    return Objects.equals(cedula, cliente.cedula) && Objects.equals(nombre, cliente.nombre);
+    return Objects.equals(cedula, cliente.cedula);
   }
 
+  /**
+   * Este metodo funciona como el equals, solo que este se usa cuando se desea
+   * añadir uin objeto a una coleccion de tipo Hash. En esos casos este metodo
+   * Java llama automaticamente a este metodo y también al equals()
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(cedula, nombre);
+    return Objects.hash(cedula);
   }
 
 }

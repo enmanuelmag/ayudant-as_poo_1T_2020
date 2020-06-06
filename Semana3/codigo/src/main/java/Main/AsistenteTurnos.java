@@ -8,11 +8,21 @@ public class AsistenteTurnos {
   private ArrayList<Cliente> clientes;
   private Scanner sc;
 
+  /**
+   * Constructor para la clase AsistenteTurnos
+   * 
+   * @param sc scanner para leer informacion desde el teclado
+   */
   public AsistenteTurnos(Scanner sc) {
     this.clientes = new ArrayList<>();
     this.sc = sc;
   }
 
+  /**
+   * Funcion para validar que el cliente no sere pita en la fila
+   * 
+   * @return cliente validado
+   */
   private Cliente verificarCliente() {
 
     System.out.print("Ingrese su cédula: ");
@@ -38,6 +48,11 @@ public class AsistenteTurnos {
     return null;
   }
 
+  /**
+   * Registrar al cliente en la fila
+   * 
+   * @return true si se registro al cliente, false si no
+   */
   public boolean registrarTurno() {
 
     Cliente cliente = verificarCliente();
@@ -58,11 +73,17 @@ public class AsistenteTurnos {
     return false;
   }
 
+  /**
+   * Quita al cliente que estaba primero en la fila
+   */
   public void terminarTurno() {
 
     this.clientes.remove(0);
   }
 
+  /**
+   * Imprime a los clientes y su información en el orden en el que se encunetran
+   */
   public void mostrarClientes() {
     /**
      * Usando tecnicas de Java del 1998 sería asi
@@ -78,9 +99,10 @@ public class AsistenteTurnos {
     }
 
     /**
-     * Usando nuesvas caracteristicas, puede parecer mas codigo pero cuando se tiene
-     * que hacer mas cosas como filtrar, ordenas y demas, es aconsejable usar los
-     * metodos que dispone .stream(). Hace el codigo mas sencillo y legible
+     * Usando nuesvas caracteristicas, o una manera mas PRO, sería asi. Puede
+     * parecer mas codigo pero cuando se tiene que hacer mas cosas como filtrar,
+     * ordenas y demas, es aconsejable usar los metodos que dispone .stream(),
+     * debidoa que hace el codigo mas sencillo y legible
      */
 
     // this.clientes.stream().forEach(cliente -> {
@@ -90,6 +112,9 @@ public class AsistenteTurnos {
 
   }
 
+  /**
+   * Muestra las opciones disponibles del sistema
+   */
   public void mostrarMenu() {
 
     String texto = "1 -> Mostrar Fila\n2 -> Registrar Turno\n3 -> Terminar Turno\n4 ->Salir";
