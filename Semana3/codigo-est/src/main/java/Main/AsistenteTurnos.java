@@ -26,30 +26,15 @@ public class AsistenteTurnos {
   private Cliente verificarCliente() {
     // Con el atributo scanner pida por pantalla la cédula del cliente
     System.out.print("Ingrese su cédula: ");
-    String cedula = sc.nextLine();
 
     // Con el atributo scanner pida por pantalla el nombre del cliente
     System.out.print("Ingrese su nombre: ");
-    String nombre = sc.nextLine();
 
     // Crear un nuevo objeto cliente con esos datos
-    Cliente cliente = new Cliente(cedula, nombre);
 
     // Evalaur si el objeto creado no esta presente ya en el arreglo de clientes
     // Si no esta presente retornar al cliente creado
     // Si ya esta presente retornar null
-    if (!this.clientes.contains(cliente)) {
-
-      return cliente;
-    }
-
-    // Tambien se puede usar el siguiente codigo
-    // Esto es el operador Ternario o Elvis
-
-    // return !this.clientes.contains(cliente) ? cliente : null;
-
-    // Su esctructura es:
-    // condicion ? valor si se cumple : valor si no se cumple
 
     return null;
   }
@@ -61,25 +46,22 @@ public class AsistenteTurnos {
    */
   public boolean registrarTurno() {
 
-    // llamar a la funcion verificarCliente
-    Cliente cliente = verificarCliente();
+    // llamar a la funcion verificarCliente y almacenar su valor en la variable
+    // cliente
+    Cliente cliente = null;
 
     if (cliente != null) {
       // Pedir por el scanner el motivo del cliente (string)
       System.out.print("Ingrese su motivo: ");
-      String motivo = sc.nextLine();
 
       // Setear el motivo ingresado por teclado en el atributo motivo del cliente
       // Usando el metodo setMOtivo()
-      // Setear el numero de la fila en la que se encuentra el cliente
+      // Setear el atributo numero del cliente
       // el numero debe ser la cantidad de elementos en el arreglo clientes
-      cliente.setMotivo(motivo);
-      cliente.setNumero(this.clientes.size());
 
       System.out.println("Cliente registrado en la fila correctamente");
       // Añadir el cleinte al arreglo y retornar true (la funcion .add() de ArrayList
       // retorna true si se añade el elemento)
-      return this.clientes.add(cliente);
     }
 
     System.out.println("Cliente ya presente en la fila");
@@ -92,7 +74,6 @@ public class AsistenteTurnos {
   public void terminarTurno() {
 
     // Remover del arreglo cliente al que este en la primera posicion
-    this.clientes.remove(0);
   }
 
   /**
@@ -109,20 +90,7 @@ public class AsistenteTurnos {
       System.out.println("La fila está vacía");
 
     // Iterar y mostrar por pantalla la informacion de los clientes
-    for (Cliente cliente : this.clientes) {
-      System.out.println(cliente);
-    }
 
-    /**
-     * Usando nuesvas caracteristicas, o una manera mas PRO, sería asi. Puede
-     * parecer mas codigo pero cuando se tiene que hacer mas cosas como filtrar,
-     * ordenas y demas, es aconsejable usar los metodos que dispone .stream(),
-     * debidoa que hace el codigo mas sencillo y legible
-     */
-
-    // this.clientes.stream().forEach(cliente -> {
-    // System.out.println(cliente);
-    // });
     System.out.println("---------------------------------");
 
   }

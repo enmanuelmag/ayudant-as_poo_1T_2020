@@ -30,8 +30,7 @@ public class Cliente {
   public String toString() {
     // Este metodo debe retornar un string que contener la informacion de todos los
     // atributos de la clase
-    return "Num. Fila='" + this.numero + " cedula='" + getCedula() + "'" + ", nombre='" + getNombre() + "'"
-        + ", motivo='" + getMotivo() + "'";
+    return "";
   }
 
   /**
