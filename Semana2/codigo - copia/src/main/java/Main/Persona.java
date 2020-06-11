@@ -1,5 +1,7 @@
 package Main;
 
+import java.util.Objects;
+
 public class Persona {
 
   // Seccion de atributos
@@ -20,11 +22,20 @@ public class Persona {
    * @param edad   de la persona
    */
 
+  public Persona(String nombre, int edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+
   //
   /**
    * Implementar el método showInfo, que NO recibe parámetros y solo muestra por
    * pantalla el nombre de la persona y lo retorna
    */
+
+  public void showInfo() {
+    System.out.println(this.nombre);
+  }
 
   //
   // Sobrecarga de métodos
@@ -36,6 +47,19 @@ public class Persona {
    * diciendo si la persona ES o NO mayor de edad (18 años)
    */
 
+  public void showInfo(boolean b) {
+    showInfo();
+
+    System.out.println(this.edad);
+
+    if (b) {
+
+      boolean mayor = this.edad >= 18;
+      System.out.println("Es mayor de edad: " + mayor);
+    }
+
+  }
+
   /**
    * Implementar otro metodo showInfo que esta vez recibe un boolean y un string
    * (correo ficticio). Este showInfo deberá llamar al showInfo anterior (el que
@@ -46,5 +70,58 @@ public class Persona {
    * parametro
    * 
    */
+
+  public void showInfo(boolean b, String correo, int a, Object o, Persona p2) {
+    showInfo(b);
+
+    if (!correo.equals("")) {
+      System.out.println("Enciando correo a: " + correo);
+    }
+  }
+
+  public void showInfo(String correo) {
+    if (!correo.equals("")) {
+      System.out.println("Enciando correo a: " + correo);
+    }
+  }
+
+  @Override
+  public String toString() {
+
+    return this.nombre;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this)
+      return true;
+    if (!(o instanceof Persona)) {
+      return false;
+    }
+    Persona persona = (Persona) o;
+    return Objects.equals(nombre, persona.nombre) && edad == persona.edad;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(nombre, edad);
+
+  }
+
+  public String getNombre() {
+    return this.nombre;
+  }
+
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
+  }
+
+  public int getEdad() {
+    return this.edad;
+  }
+
+  public void setEdad(int edad) {
+    this.edad = edad;
+  }
 
 }
