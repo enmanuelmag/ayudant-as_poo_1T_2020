@@ -10,31 +10,19 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
-        Persona person1 = new Persona("Enmanuel", 18);
-        person1.getInfo();
-
-        objetoParametro(person1);
-        System.out.println("Nombre es: " + person1.nombre);
-
-        variableParametro(person1.nombre);
-        System.out.println("Nombre es: " + person1.nombre);
-
-        String a = "Soy un String";
-        variableParametro(a);
-        System.out.println(a);
+        // Crear 3 objetos de la clase Perona y guardarlos en un ArrayList de tipo
+        // Persona
 
     }
 
     public static void objetoParametro(Persona persona) {
         // modificar el nombre de la persona
         // no retornar nada
-        persona.nombre = "El nombre cambio";
     }
 
     public static void variableParametro(String nombrePersona) {
         // modificar el parametro recibido por otro cualquier
         // No retornar nada
-        nombrePersona = "El nombre no cambiará";
     }
 
     public static void tiposVariables() {
