@@ -15,21 +15,24 @@ public class App {
         // Crear 3 objetos de la clase Perona y guardarlos en un ArrayList de tipo
         // Persona
 
-        
+        // Ahora crear un nuevo objeto persona que contenga la misma referecnia a uno de
+        // los objetos anterioemnte guardados
+
+        // Ahora crear un NUEVO objeto persona que contenga los mismo valores en los
+        // atributos de alguno de los objetos presentes en el arreglo
 
     }
 
     public static void objetoParametro(Persona persona) {
         // modificar el nombre de la persona
         // no retornar nada
-        
+
     }
 
     public static void variableParametro(int edad) {
         // modificar el parametro recibido por otro cualquier
         // No retornar nada
 
-        
     }
 
     public static void tiposVariables() {
