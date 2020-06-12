@@ -34,7 +34,7 @@ public class Persona {
    */
 
   public void showInfo() {
-    System.out.println(this.nombre);
+
   }
 
   //
@@ -48,15 +48,6 @@ public class Persona {
    */
 
   public void showInfo(boolean b) {
-    showInfo();
-
-    System.out.println(this.edad);
-
-    if (b) {
-
-      boolean mayor = this.edad >= 18;
-      System.out.println("Es mayor de edad: " + mayor);
-    }
 
   }
 
@@ -72,17 +63,7 @@ public class Persona {
    */
 
   public void showInfo(boolean b, String correo, int a, Object o, Persona p2) {
-    showInfo(b);
 
-    if (!correo.equals("")) {
-      System.out.println("Enciando correo a: " + correo);
-    }
-  }
-
-  public void showInfo(String correo) {
-    if (!correo.equals("")) {
-      System.out.println("Enciando correo a: " + correo);
-    }
   }
 
   @Override

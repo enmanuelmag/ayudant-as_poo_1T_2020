@@ -1,5 +1,7 @@
 package Main;
 
+import java.util.Objects;
+
 public class Persona {
 
   // Seccion de atributos
@@ -24,36 +26,59 @@ public class Persona {
     this.edad = edad;
   }
 
-  // Como el atributo edad es privado, se tiene que crear un metodo para poder
-  // acceder a el desde otra clase
-  /**
-   * 
-   * @return edad de la persona
-   */
-  public int getEdad() {
-    return this.edad;
-  }
-
   /**
    * Dice la edad de la persona
    */
-  public void getInfo() {
+  public void showInfo() {
     System.err.println("Nombre: " + this.nombre);
 
   }
 
   // Sobrecarga de métodos
-  public void getInfo(boolean b) {
+  public void showInfo(boolean b) {
 
-    getInfo();
+    showInfo();
     System.out.println("Edad: " + this.edad);
     if (b)
       System.err.println("Es mayor de edad: " + (this.edad >= 18));
   }
 
-  public void getInfo(boolean b, String correo) {
-    getInfo(b);
+  public void showInfo(boolean b, String correo) {
+    showInfo(b);
     if (!correo.equals(""))
       System.out.println("Enviando email a: " + correo);
+  }
+
+  @Override
+  public String toString() {
+
+    return this.nombre;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this)
+      return true;
+    if (!(o instanceof Persona)) {
+      return false;
+    }
+    Persona persona = (Persona) o;
+    return Objects.equals(nombre, persona.nombre) && edad == persona.edad;
+  }
+
+  public String getNombre() {
+    return this.nombre;
+  }
+
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
+  }
+
+  public int getEdad() {
+    return this.edad;
+  }
+
+  public void setEdad(int edad) {
+    this.edad = edad;
   }
 }

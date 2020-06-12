@@ -15,41 +15,21 @@ public class App {
         // Crear 3 objetos de la clase Perona y guardarlos en un ArrayList de tipo
         // Persona
 
-        Persona p1 = new Persona("Enmanuel", 2);
-        Persona p2 = new Persona("Enmanuel-", 2);
-        p1.equals(p2);
-
-        ArrayList<Persona> lista = new ArrayList<>();
-        lista.add(p1);
-
-        if (!lista.contains(p2)) {
-            lista.add(p2);
-        }
-
-        System.out.println(lista);
-
-        objetoParametro(p1);
-
-        System.out.println(p1);
-
-        variableParametro(p1.edad);
-
-        System.out.println(p1.edad);
+        
 
     }
 
     public static void objetoParametro(Persona persona) {
         // modificar el nombre de la persona
         // no retornar nada
-        persona.nombre = "String";
-
+        
     }
 
     public static void variableParametro(int edad) {
         // modificar el parametro recibido por otro cualquier
         // No retornar nada
 
-        edad += 10000;
+        
     }
 
     public static void tiposVariables() {

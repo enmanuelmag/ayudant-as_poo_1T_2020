@@ -11,7 +11,7 @@ public class App {
         System.out.println("Hello World!");
 
         Persona person1 = new Persona("Enmanuel", 18);
-        person1.getInfo();
+        person1.showInfo();
 
         objetoParametro(person1);
         System.out.println("Nombre es: " + person1.nombre);
